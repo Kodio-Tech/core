@@ -2,7 +2,7 @@
 
 namespace Chatter\Core\Http\Controllers\Api;
 
-use Str;
+use Illuminate\Support\Str;
 use Auth;
 use Illuminate\Routing\Controller;
 use Chatter\Core\Models\UserResource;

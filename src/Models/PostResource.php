@@ -2,7 +2,7 @@
 
 namespace Chatter\Core\Models;
 
-use Str;
+use Illuminate\Support\Str;
 use Chatter\Core\Models\ReactionResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 

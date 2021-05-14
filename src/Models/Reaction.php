@@ -2,7 +2,7 @@
 
 namespace Chatter\Core\Models;
 
-use Str;
+use Illuminate\Support\Str;
 use Auth;
 use Illuminate\Database\Eloquent\Model;
 

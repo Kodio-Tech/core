@@ -2,8 +2,8 @@
 
 namespace Chatter\Core\Models;
 
-use Str;
 use Auth;
+use Illuminate\Support\Str;
 use Chatter\Core\Models\Post;
 use Chatter\Core\Traits\TimeAgo;
 use Chatter\Core\Models\Category;

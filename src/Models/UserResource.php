@@ -3,7 +3,7 @@
 namespace Chatter\Core\Models;
 
 use Chatter\Core\Helpers\ChatterHelper;
-use Str;
+use Illuminate\Support\Str;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
