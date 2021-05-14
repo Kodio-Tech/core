@@ -74,6 +74,7 @@ import Pagination from '../components/Pagination'
 import Reply from '../components/Reply'
 import Reactions from '../components/Reactions'
 import { events } from '../events'
+import axios from 'axios'
 
 export default {
     components: {
