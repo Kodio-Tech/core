@@ -40,8 +40,8 @@ class ChatterPreset extends Preset
         $composer->dumpAutoloads();
 
         // User want to install test data?
-        if (!$pluginInstall && ($command->options()["no-interaction"] || $command->confirm('Do you want to install test data? It will remove all the data on your database'))) {
-            Artisan::call('migrate:fresh');
+        if (!$pluginInstall && ($command->options()["no-interaction"] || $command->confirm('Do you want to install test data?'))) {
+            //Artisan::call('migrate:fresh');
             Artisan::call('db:seed', [
                 '--class' => 'ChatterTableSeeder',
             ]);
