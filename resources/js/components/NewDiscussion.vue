@@ -66,6 +66,7 @@ import { mapGetters, mapMutations } from 'vuex'
 import { events } from '../events'
 import Discussion from '../Discussion'
 import Editor from '../components/editor/Editor'
+import axios from 'axios'
 
 export default {
     components: {

@@ -40,8 +40,9 @@ class ChatterPreset extends Preset
         $composer->dumpAutoloads();
 
         // User want to install test data?
-        if (!$pluginInstall && ($command->options()["no-interaction"] || $command->confirm('Do you want to install test data? It will remove all the data on your database'))) {
-            Artisan::call('migrate:fresh');
+        if (!$pluginInstall && ($command->options()["no-interaction"] || $command->confirm('Do you want to install test data?'))) {
+            //Artisan::call('migrate:fresh');
+            Artisan::call('migrate');
             Artisan::call('db:seed', [
                 '--class' => 'ChatterTableSeeder',
             ]);
@@ -107,14 +108,14 @@ class ChatterPreset extends Preset
     }
 
     /**
-     * Removes the unused main-app.js template
+     * Removes the unused chatter-app.js template
      *
      * @return void
      */
     protected static function removeUnused()
     {
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->delete(resource_path('js/chatter/main-app.js'));
+            $filesystem->delete(resource_path('js/chatter-app.js'));
         });
     }
 
@@ -126,7 +127,7 @@ class ChatterPreset extends Preset
     protected static function updateJavascript()
     {
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->delete(public_path('js/app.js'));
+            $filesystem->delete(public_path('js/chatter/app.js'));
 
             if (! $filesystem->isDirectory($directory = resource_path('js'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
@@ -136,6 +137,6 @@ class ChatterPreset extends Preset
 
     protected static function copyJsApp()
     {
-        copy(base_path('vendor/chatter-laravel/core/resources/js/main-app.js'), resource_path('js/app.js'));
+        copy(__DIR__ . '/../resources/js/chatter-app.js', resource_path('js/chatter/app.js'));
     }
 }

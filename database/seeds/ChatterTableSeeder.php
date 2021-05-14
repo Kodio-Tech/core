@@ -13,7 +13,7 @@ class ChatterTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(config('chatter.user.namespace'), 10)->create();
+        //factory(config('chatter.user.namespace'), 10)->create();
         factory(Category::class, 10)->create();
         factory(Discussion::class, 100)->create();
     }

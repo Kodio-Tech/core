@@ -31,6 +31,7 @@
 import { mapGetters, mapMutations } from 'vuex';
 import Editor from './editor/Editor'
 import { events } from '../events'
+import axios from 'axios'
 
 export default {
     components: {

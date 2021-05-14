@@ -47,6 +47,7 @@ import { mapGetters, mapMutations } from 'vuex'
 import { ContentLoader } from 'vue-content-loader'
 import Discussion from '../components/Discussion'
 import Pagination from '../components/Pagination'
+import axios from 'axios'
 
 export default {
     components: {

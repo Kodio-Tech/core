@@ -15,6 +15,7 @@
 import { mapGetters } from 'vuex';
 import EmojiPicker from './EmojiPicker'
 import { events } from '../events'
+import axios from 'axios'
 
 export default {
     components: {
