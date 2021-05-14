@@ -126,7 +126,7 @@ class ChatterPreset extends Preset
     protected static function updateJavascript()
     {
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->delete(public_path('js/app.js'));
+            $filesystem->delete(public_path('js/chatter/app.js'));
 
             if (! $filesystem->isDirectory($directory = resource_path('js'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
@@ -136,6 +136,6 @@ class ChatterPreset extends Preset
 
     protected static function copyJsApp()
     {
-        copy(base_path('vendor/chatter-laravel/core/resources/js/main-app.js'), resource_path('js/app.js'));
+        copy(base_path('vendor/chatter-laravel/core/resources/js/main-app.js'), resource_path('js/chatter/app.js'));
     }
 }
